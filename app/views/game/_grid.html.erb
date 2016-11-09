@@ -1,0 +1,125 @@
+<h2>Play with a friend!</h2>
+<br />
+<div class="row">
+  <div class="col-xs-4">
+    <% if @grid.row1[0] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row1[0] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "0", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "0", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4 middle-column">
+    <% if @grid.row1[1] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row1[1] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "1", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+      <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "1", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <% if @grid.row1[2] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row1[2] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "2", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "1", location: "2", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row middle-row">
+  <div class="col-xs-4">
+    <% if @grid.row2[0] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row2[0] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+      <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "0", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+      <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "0", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4 middle-column">
+    <% if @grid.row2[1] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row2[1] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "1", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "1", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <% if @grid.row2[2] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row2[2] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "2", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "2", location: "2", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <% if @grid.row3[0] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row3[0] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "0", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "0", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4 middle-column">
+    <% if @grid.row3[1] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row3[1] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "1", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "1", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="col-xs-4">
+    <% if @grid.row3[2] == "X" %>
+      <%= image_tag("hillary.png", class: "image") %>
+    <% elsif @grid.row3[2] == "O" %>
+      <%= image_tag("trump.png", class: "image") %>
+    <% else %>
+      <% if @game.turn == "trump" %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "2", play: "O"), method: :post, class: "btn btn-danger btn-lg")%>
+      <% else %>
+        <%= link_to("Play Move", move_path(id: @game.id, row: "3", location: "2", play: "X"), method: :post, class: "btn btn-primary btn-lg")%>
+      <% end %>
+    <% end %>
+  </div>
+</div>

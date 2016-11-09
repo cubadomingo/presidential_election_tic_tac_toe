@@ -1,21 +1,13 @@
 class Game < ApplicationRecord
-  def initialize
-    @game = [
-      ["X","O","X"],
-      ["X","O","X"],
-      ["X","X","X"]
-    ]
-  end
+  belongs_to :grid
 
-  def row1
-    @game[0]
-  end
-
-  def row2
-    @game[1]
-  end
-
-  def row3
-    @game[2]
+  def next_player
+    if self.turn == "trump"
+      self.turn = "hillary"
+      self.save
+    elsif self.turn == "hillary"
+      self.turn = "trump"
+      self.save
+    end
   end
 end

@@ -1,16 +1,18 @@
-<h1>Play Tic Tac Toe with a friend</h1>
-<div>
-  <%= @game.row1[0] %>
-  <%= @game.row1[1] %>
-  <%= @game.row1[2] %>
-</div>
-<div>
-  <%= @game.row2[0] %>
-  <%= @game.row2[1] %>
-  <%= @game.row2[2] %>
-</div>
-<div>
-  <%= @game.row3[0] %>
-  <%= @game.row3[1] %>
-  <%= @game.row3[2] %>
+<div class="container text-xs-center">
+  <br />
+  <h1>2016 Presidential Election Tic Tac Toe!</h1>
+  <% if @game.winner %>
+    <br />
+    <h1><%= @game.winner.upcase! %> HAS EMERGED VICTORIOUS! MURICA!</h1>
+    <%= image_tag("#{@game.winner.downcase}.png") %>
+    <div>
+      <% if @game.winner.downcase == "trump" %>
+        <%= link_to "Play Again", root_path, class: "btn btn-danger btn-lg" %>
+      <% elsif @game.winner.downcase == "hillary" %>
+        <%= link_to "Play Again", root_path, class: "btn btn-primary btn-lg" %>
+      <% end %>
+    </div>
+  <% else %>
+    <%= render partial: "grid" %>
+  <% end %>
 </div>

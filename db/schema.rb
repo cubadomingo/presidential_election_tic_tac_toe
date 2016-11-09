@@ -10,12 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161107222311) do
+ActiveRecord::Schema.define(version: 20161108165354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "games", force: :cascade do |t|
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "winner"
+    t.string   "turn",       default: "trump"
+    t.integer  "grid_id"
+    t.index ["grid_id"], name: "index_games_on_grid_id", using: :btree
+  end
+
+  create_table "grids", force: :cascade do |t|
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.text     "row1",       default: ["", "", ""],              array: true
+    t.text     "row2",       default: ["", "", ""],              array: true
+    t.text     "row3",       default: ["", "", ""],              array: true
+  end
+
+  create_table "turns", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
