@@ -12,7 +12,15 @@
         <%= link_to "Play Again", root_path, class: "btn btn-primary btn-lg" %>
       <% end %>
     </div>
+  <% elsif @game.grid.stalemate? %>
+    <h1>Stalemate</h1>
+    <%= image_tag("hillary.png") %>
+    <%= image_tag("trump.png") %>
+    <div>
+      <%= link_to "Play Again", root_path, class: "btn btn-danger btn-lg" %>
+    </div>
   <% else %>
     <%= render partial: "grid" %>
   <% end %>
+  <%= console %>
 </div>

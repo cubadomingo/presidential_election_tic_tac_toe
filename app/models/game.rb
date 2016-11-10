@@ -11,3 +11,5 @@ class Game < ApplicationRecord
     end
   end
 end
+
+#tie is when everyone is filled but no one one
